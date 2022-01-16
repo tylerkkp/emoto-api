@@ -52,3 +52,4 @@ def add_bike(bike: Ebike):
     else:
         company_map[company] = []
         company_map[company].append(bike)
+        return bike
