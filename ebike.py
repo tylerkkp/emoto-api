@@ -12,6 +12,7 @@ class Ebike(BaseModel):
     range: float
     power: float # kiloWatts
     battery: float # kiloWatt hours
+    msrp: int
 
 
 
