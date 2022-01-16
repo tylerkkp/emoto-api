@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from typing import List
 
 # Message class defined in Pydantic
-class eBike(BaseModel):
+class Ebike(BaseModel):
     brand: str
     model: str
     trim: str
@@ -36,14 +36,14 @@ def get_companies():
     return company_list
 
 
-@app.get("/bikes/{company}", response_model=List[eBike])
+@app.get("/bikes/{company}", response_model=List[Ebike])
 def get_bikes(company: str):
     """Get all bikes for the specified company."""
     return company_map.get(company)
 
 
 @app.post("/add_bike", status_code=status.HTTP_201_CREATED)
-def add_bike(bike: eBike):
+def add_bike(bike: Ebike):
     """Post a new bike to the specified company."""
     company = bike.brand
     if company in company_list:
