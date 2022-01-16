@@ -36,7 +36,7 @@ def get_companies():
     return company_list
 
 
-@app.get("/bikes/{company}", response_model=List[Ebike])
+@app.get("/companies/{company}", response_model=List[Ebike])
 def get_bikes(company: str):
     """Get all bikes for the specified company."""
     return company_map.get(company)
